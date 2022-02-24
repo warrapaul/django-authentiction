@@ -1,0 +1,346 @@
+:root {
+
+  --gold-color: #ffb91f;
+
+
+  --smokewhite-color: #f5f7f9	;
+  --creamwhite-color: #FFFFF0;
+  --white-color: #FFFFFF;
+  --ghostwhite-color: #f8f8ff;
+  --yellow-color: #FFFF00;
+
+  --black-color: #000000;
+  --lightblack-color: #3B3C36;
+  --darkblack-color: #OF0F0F;
+
+  --lightgrey-color: #e1e1e1;
+  --midgrey-color: #F0F0F0;
+  --blue-color:#3072f5;
+  --darkgrey-color: #A9A9A9;
+
+/***KONNECT PALLET****/
+ --kdarkgrey:#e1e1e1;
+ --klightgrey:#f5f7f9;
+ --kred:#ee2c4e;
+ --kgold:#ffb91f;
+ --kaqua:#0cbeaf;
+ --kblue:#3072f5;
+ --kblack:#000000;
+ --kgreen:#85ce36;
+
+
+}
+body {
+
+font-family: "Open Sans", sans-serif;
+background: var(--klightgrey);
+color: var(--kblack);
+}
+.wrap-on-large{
+width: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: "Playfair Display", serif;
+}
+
+a {
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 9999;
+overflow: hidden;
+background: #1a1814;
+}
+
+#preloader:before {
+content: "";
+position: fixed;
+top: calc(50% - 30px);
+left: calc(50% - 30px);
+border: 6px solid #1a1814;
+border-top-color: #cda45e;
+border-bottom-color: #cda45e;
+border-radius: 50%;
+width: 60px;
+height: 60px;
+-webkit-animation: animate-preloader 1s linear infinite;
+animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes animate-preloader {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+position: fixed;
+visibility: hidden;
+opacity: 0;
+right: 15px;
+bottom: 15px;
+z-index: 996;
+width: 44px;
+height: 44px;
+border-radius: 50px;
+transition: all 0.4s;
+border: 2px solid var(--gold-color);
+}
+.back-to-top i {
+font-size: 28px;
+color: var(--gold-color);
+line-height: 0;
+}
+.back-to-top:hover {
+background: var(--gold-color);
+color: var(--smokewhite-color);
+}
+.back-to-top:hover i {
+color: var(--white-color);
+}
+.back-to-top.active {
+visibility: visible;
+opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+[data-aos-delay] {
+  transition-delay: 0 !important;
+}
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#header {
+background:  rgba(0, 0, 0, 0.85);
+border-bottom: 1px solid rgba(12, 11, 9, 0.6);
+transition: all 0.5s;
+z-index: 997;  
+
+}
+
+#header.header-scrolled {
+
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid #37332a;
+}
+
+
+
+
+
+
+
+#header .logo img {
+max-height: 6vh;
+}
+
+/**
+* Desktop Navigation 
+*/
+.navbar {
+padding: 0;
+}
+.navbar ul {
+margin: 0;
+padding: 0;
+display: flex;
+list-style: none;
+align-items: center;
+}
+.navbar li {
+position: relative;
+}
+.navbar a, .navbar a:focus {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 3px 0 3px 30px;
+color: var(--white-color);
+white-space: nowrap;
+transition: 0.3s;
+font-size: 18px;
+font-weight: 700;
+}
+.navbar a i, .navbar a:focus i {
+font-size: 12px;
+line-height: 0;
+margin-left: 5px;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+color: var(--gold-color);
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+color: var(--white-color);
+font-size: 28px;
+cursor: pointer;
+display: none;
+line-height: 0;
+transition: 0.5s;
+border: solid white 2px;
+border-radius: 10px;
+padding: 1px;
+margin-right: 12vw;
+
+}
+
+@media (max-width: 991px) {
+.mobile-nav-toggle {
+  display: block;
+}
+
+.navbar ul {
+  display: none;
+}
+}
+.navbar-mobile {
+position: fixed;
+overflow: hidden;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+transition: 0.3s;
+z-index: 999;
+}
+.navbar-mobile .mobile-nav-toggle {
+position: absolute;
+top: 10px;
+right: 15px;
+color: var(--gold-color);
+font-weight: 1500;
+font-size: 34px;
+margin-right: 5vw;
+margin-top: 5px;/* remove margins to stop jumping effect*/
+}
+.navbar-mobile ul {
+display: block;
+position: absolute;
+top: 4px;
+right: 5px;
+bottom: 15px;
+left: 5px;
+padding: 10px 0;
+border-radius: 26px;
+background-color: var(--black-color);
+overflow-y: auto;
+transition: 0.3s;
+max-height: 60vh;
+}
+.navbar-mobile span{
+background-color: var(--black-color);
+display:none;
+}
+.navbar-mobile a, .navbar-mobile a:focus {
+padding: 12px 10px;
+font-size: 18px;
+font-weight: 400;
+color: var(--gold-color);}
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: var(--gold-color);
+
+}
+.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
+margin: 15px;
+}
+
+
+.logo a, .logo a:focus, .logo .active:focus,.logo img {
+max-height: 6vh; 
+text-decoration: none;
+outline: none;
+}
+
+
+.section-headings{
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: var(--gold-color);
+  padding-bottom: 0.1vh;
+  }
+  .section-descriptions{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Playfair Display", serif;
+    color: var(--black-color);
+    padding-bottom: 0.1vh;
+  }
+/*--------------------------------------------------------------
+# K ICONS BELOW ANNOUNCEMENTS
+--------------------------------------------------------------*/
+  #kbuttons{
+    margin-top: 7.5vh;
+    padding-bottom: 1vh;
+    background-color: var(--white-color);
+    }
+  #kbuttons img{   
+  width: 5vh;
+  height: 4vh;
+  max-height: 4vh;
+  }
+  #kbuttons .kbtn-col{
+    padding: 0;
+    margin-top: 0.5vh;
+  }
+  #kbuttons .kbtn-caption{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  font-size: 0.75em
+  } 
+@media (max-width: 480px) {      
+  
+
+}
+@media (min-width: 767px) {
+  #kbuttons .kbtn-col{
+    padding: 1vh;    
+  }
+  #kbuttons .kbtn-caption{
+    font-size: 1em;
+    }
+  
+ }
